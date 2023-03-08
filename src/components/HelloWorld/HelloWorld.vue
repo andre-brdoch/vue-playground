@@ -115,8 +115,21 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'HelloWorld',
+
   props: {
     msg: { type: String, required: true },
+  },
+
+  data() {
+    return {
+      someData: true,
+    }
+  },
+
+  computed: {
+    msgLong(): string {
+      return `${this.msg} LONG`
+    },
   },
 })
 </script>
