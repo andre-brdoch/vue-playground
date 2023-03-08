@@ -5,15 +5,15 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import AppPerson from "./components/AppPerson/AppPerson.vue";
+import Vue from 'vue'
+import AppPerson from './components/AppPerson/AppPerson.vue'
 
 export default Vue.extend({
-  name: "App",
+  name: 'App',
   components: {
     AppPerson,
   },
-});
+})
 </script>
 
 <style>

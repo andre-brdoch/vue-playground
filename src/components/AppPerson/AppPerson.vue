@@ -6,10 +6,10 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue'
 
 export default Vue.extend({
-  name: "AppPerson",
+  name: 'AppPerson',
 
   props: {
     firstName: { type: String, required: true },
@@ -19,10 +19,10 @@ export default Vue.extend({
 
   computed: {
     fullName(): string {
-      return `${this.firstName} ${this.lastName}`;
+      return `${this.firstName} ${this.lastName}`
     },
   },
-});
+})
 </script>
 
 <style scoped>
