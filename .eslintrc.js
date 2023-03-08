@@ -16,6 +16,11 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+
+    'vue/html-self-closing': [
+      2,
+      { html: { void: 'always', normal: 'never', component: 'always' } },
+    ],
   },
   overrides: [
     {

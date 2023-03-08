@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <AppPerson firstName="Max" lastName="Mustermann" :age="33"></AppPerson>
+    <AppPerson first-name="Max" last-name="Mustermann" :age="33" />
   </div>
 </template>
 
