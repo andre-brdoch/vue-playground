@@ -14,7 +14,7 @@ export default Vue.extend({
   props: {
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
-    age: Number,
+    age: { type: Number || undefined, default: undefined },
   },
 
   computed: {
