@@ -1,21 +1,21 @@
 <template>
   <div id="app" class="app">
-    <AppPerson first-name="Max" last-name="Mustermann" :age="33" />
-    <AppPerson first-name="Max" last-name="Mustermann" :age="33" />
-    <AppProgrammatic />
+    <VpBasic first-name="Max" last-name="Mustermann" :age="33" />
+    <VpBasic first-name="Max" last-name="Mustermann" :age="33" />
+    <VpProgrammatic />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import AppPerson from './components/AppPerson/AppPerson.vue'
-import AppProgrammatic from './components/AppProgrammatic/AppProgrammatic.vue'
+import VpBasic from './components/Basic/Basic.vue'
+import VpProgrammatic from './components/Programmatic/Programmatic.vue'
 
 export default Vue.extend({
   name: 'App',
   components: {
-    AppPerson,
-    AppProgrammatic,
+    VpBasic,
+    VpProgrammatic,
   },
 })
 </script>

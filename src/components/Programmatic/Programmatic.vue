@@ -7,13 +7,13 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import AppPerson from '../AppPerson/AppPerson.vue'
+import VpBasic from '../Basic/Basic.vue'
 
 export default Vue.extend({
-  name: 'AppProgrammatic',
+  name: 'VpBasic',
 
   mounted() {
-    const vm = new AppPerson({
+    const vm = new VpBasic({
       propsData: { firstName: 'Programmatically', lastName: 'Created', age: 1 },
     })
     const target = this.$refs.target as HTMLElement
