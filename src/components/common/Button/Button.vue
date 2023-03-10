@@ -39,4 +39,9 @@ export default Vue.extend({
   letter-spacing: 0.03em;
   cursor: pointer;
 }
+
+.button[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
 </style>
