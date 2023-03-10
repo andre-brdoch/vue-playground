@@ -4,7 +4,8 @@ import VpButton from './Button.vue'
 import type { ButtonProps } from './Button.vue'
 
 const meta: Meta = {
-  title: 'Button',
+  title: 'common/Button',
+  component: VpButton,
 }
 export default meta
 
