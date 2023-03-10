@@ -1,3 +1,5 @@
+import '../src/assets/global.css'
+
 export const parameters = {
   options: {
     storySort: {
