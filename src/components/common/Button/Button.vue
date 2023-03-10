@@ -11,6 +11,11 @@
 <script lang="ts">
 import Vue from 'vue'
 
+export interface ButtonProps {
+  message?: string
+  isDisabled: boolean
+}
+
 export default Vue.extend({
   name: 'VpButton',
 

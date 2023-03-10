@@ -1,16 +1,18 @@
 import { action } from '@storybook/addon-actions'
-
+import { Meta, Story } from '@storybook/vue/types-6-0'
 import VpButton from './Button.vue'
+import type { ButtonProps } from './Button.vue'
 
-export default {
+const meta: Meta = {
   title: 'Button',
 }
+export default meta
 
-const Template = (args, { argTypes }) => ({
+const Template: Story<ButtonProps> = (args, { argTypes }) => ({
   components: { VpButton },
   props: Object.keys(argTypes),
   template: '<VpButton v-bind="$props " @click="action" />',
-  methods: { action: action('clicked') },
+  methods: { action: action('click') },
 })
 
 export const Standard = Template.bind({})
