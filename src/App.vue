@@ -1,26 +1,27 @@
 <template>
   <div id="app" class="app">
-    <VpBasic first-name="Max" last-name="Mustermann" :age="33" />
-    <VpViewModel first-name="Max" last-name="Mustermann" :age="33" />
-    <VpRenderTemplate first-name="Render" last-name="Template" :age="33" />
-    <VpProgrammatic />
+    <VpButton :is-disabled="false" @click="clicked">
+      test
+      <template slot="icon">named slot here!</template>
+    </VpButton>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import VpBasic from './components/Basic/Basic.vue'
-import VpViewModel from './components/ViewModel/ViewModel.vue'
-import VpProgrammatic from './components/Programmatic/Programmatic.vue'
-import VpRenderTemplate from './components/RenderTemplate/RenderTemplate.vue'
+import { VpButton } from './components/common/Button'
 
 export default Vue.extend({
   name: 'App',
+
   components: {
-    VpBasic,
-    VpViewModel,
-    VpProgrammatic,
-    VpRenderTemplate,
+    VpButton,
+  },
+
+  methods: {
+    clicked() {
+      console.log('clicked dat button')
+    },
   },
 })
 </script>
