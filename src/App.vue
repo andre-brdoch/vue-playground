@@ -1,34 +1,36 @@
 <template>
   <div id="app" class="app">
-    <VpButton :is-disabled="false" @click="clicked">
-      test
-      <template slot="icon">named slot here!</template>
-    </VpButton>
+    <VpHomePage
+      title="Tell me your name, and I tell you how old you are."
+      :get-age-by-name="getAgeByName"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import { VpButton } from './components/common/Button'
+import { VpHomePage } from './components/pages/Home'
+import { agifyController } from './controllers/AgifyController'
 
 export default Vue.extend({
   name: 'App',
 
   components: {
-    VpButton,
+    VpHomePage,
   },
 
   methods: {
     clicked() {
       console.log('clicked dat button')
     },
+
+    getAgeByName: agifyController.getAgeByName,
   },
 })
 </script>
 
 <style scoped>
 .app {
-  text-align: center;
   margin: 60px 0;
 }
 .app > :not(:first-child) {
