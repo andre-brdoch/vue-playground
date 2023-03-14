@@ -22,6 +22,13 @@ describe('controllers/NameInfo', () => {
       gender: genderMock,
     })
   })
+
+  it('uses cache', async () => {
+    await analyzeName(name)
+    await analyzeName(name)
+    expect(jest.spyOn(utils, 'fetchAge')).toHaveBeenCalledTimes(1)
+  })
+
   it('returns error if any request fails', async () => {
     jest.spyOn(utils, 'fetchCountries').mockResolvedValue(new Error('fail'))
     const info = await analyzeName(name)
