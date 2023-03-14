@@ -1,17 +1,17 @@
 <template>
-  <VpNameInfo :title="title" :get-info-by-name="getInfoByName" />
+  <VpNameInfoPage :title="title" :get-info-by-name="getInfoByName" />
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import VpNameInfo from './NameInfo.vue'
+import { VpNameInfoPage } from '@/components/pages/NameInfo'
 import { analyzeName } from '@/controllers/NameInfo.controller'
 
 export default Vue.extend({
-  name: 'VpNameInfoPage',
+  name: 'VpNameInfoRoute',
 
   components: {
-    VpNameInfo,
+    VpNameInfoPage,
   },
 
   data() {

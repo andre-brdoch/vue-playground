@@ -11,13 +11,9 @@
       <VpButton @click="onSubmit">Get age</VpButton>
     </form>
 
-    <article v-if="info !== undefined" class="info stack" data-testid="info">
-      <p><b>Name:</b> {{ name }}</p>
-      <p><b>Likely age:</b> {{ info.age }}</p>
-      <p><b>Likely nationality:</b> {{ info.countries.join(', ') }}</p>
-      <p><b>Likely gender:</b> {{ info.gender }}</p>
-      <router-link :to="`/names/${name}`">Details</router-link>
-    </article>
+    <div v-if="info !== undefined" data-testid="info">
+      <VpInfo v-bind="info" />
+    </div>
 
     <p v-if="error !== undefined" class="error" data-testid="error">
       {{ error }}
@@ -28,6 +24,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import { VpButton } from '@/components/common/Button'
+import { VpInfo } from '@/components/common/Info'
 import { NameInfoModel } from '@/models/NameInfo.model'
 
 interface Data {
@@ -39,7 +36,7 @@ interface Data {
 export default Vue.extend({
   name: 'VpNameInfo',
 
-  components: { VpButton },
+  components: { VpButton, VpInfo },
 
   props: {
     title: { type: String, required: true },
@@ -82,13 +79,6 @@ export default Vue.extend({
   font-size: 1rem;
   color: inherit;
   padding: 0.5rem;
-}
-
-.info {
-  display: inline-block;
-  padding: 1rem;
-  border: 2px solid #d1d1d1;
-  border-radius: 4px;
 }
 
 .error {

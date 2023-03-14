@@ -1,2 +1,2 @@
-import VpSpecificNameInfoPage from './SpecificNameInfo.route.vue'
+import VpSpecificNameInfoPage from './SpecificNameInfo.vue'
 export { VpSpecificNameInfoPage }

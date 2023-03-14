@@ -1,12 +1,12 @@
 import VueRouter from 'vue-router'
-import { VpNameInfoPage } from '@/components/pages/NameInfo'
-import { VpSpecificNameInfoPage } from '@/components/pages/SpecificNameInfo'
-import { VpAboutPage } from '@/components/pages/About'
+import { VpNameInfoRoute } from '@/components/routes/NameInfo'
+import { VpSpecificNameInfoRoute } from '@/components/routes/SpecificNameInfo'
+import { VpAboutRoute } from '@/components/routes/About'
 
 export const routes = [
-  { path: '/', component: VpNameInfoPage },
-  { path: '/names/:name', component: VpSpecificNameInfoPage },
-  { path: '/about', component: VpAboutPage },
+  { path: '/', component: VpNameInfoRoute },
+  { path: '/names/:name', component: VpSpecificNameInfoRoute },
+  { path: '/about', component: VpAboutRoute },
 ]
 
 export const router = new VueRouter({

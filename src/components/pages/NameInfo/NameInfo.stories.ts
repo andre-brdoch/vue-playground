@@ -1,8 +1,8 @@
 import { Meta, Story } from '@storybook/vue/types-6-0'
-import VpNameInfo from './NameInfo.vue'
+import VpNameInfo from './NameInfo.page.vue'
 
 const meta: Meta = {
-  title: 'pages/VpNameInfo',
+  title: 'pages/NameInfo',
   component: VpNameInfo,
 }
 export default meta

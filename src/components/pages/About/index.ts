@@ -1,2 +1,2 @@
-import VpAboutPage from './About.route.vue'
+import VpAboutPage from './About.page.vue'
 export { VpAboutPage }

@@ -1,4 +1,4 @@
-import VpNameInfo from './NameInfo.vue'
+import VpNameInfo from './NameInfo.page.vue'
 import { mount } from '@vue/test-utils'
 
 describe('components/pages/NameInfo', () => {
