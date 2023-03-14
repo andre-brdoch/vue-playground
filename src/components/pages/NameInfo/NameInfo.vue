@@ -11,14 +11,16 @@
       <VpButton @click="onSubmit">Get age</VpButton>
     </form>
 
-    <article v-if="info !== undefined" class="info stack">
+    <article v-if="info !== undefined" class="info stack" data-testid="info">
       <p><b>Name:</b> {{ name }}</p>
       <p><b>Likely age:</b> {{ info.age }}</p>
       <p><b>Likely nationality:</b> {{ info.countries.join(', ') }}</p>
       <p><b>Likely gender:</b> {{ info.gender }}</p>
     </article>
 
-    <p v-if="error !== undefined" class="error">{{ error }}</p>
+    <p v-if="error !== undefined" class="error" data-testid="error">
+      {{ error }}
+    </p>
   </section>
 </template>
 
@@ -26,11 +28,6 @@
 import Vue from 'vue'
 import { VpButton } from '@/components/common/Button'
 import { NameInfoModel } from '@/models/NameInfo.model'
-
-export interface AgifyProps {
-  title: string
-  getInfoByName: (name: string) => Promise<NameInfoModel | Error>
-}
 
 interface Data {
   name: string
