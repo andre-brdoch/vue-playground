@@ -1,28 +1,19 @@
 <template>
   <div id="app" class="app">
-    <VpNameInfo title="Tell me your name" :get-info-by-name="getInfoByName" />
+    <nav class="stack">
+      <router-link to="/">Home</router-link>
+      <router-link to="/about">About</router-link>
+    </nav>
+
+    <router-view />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import { VpNameInfo } from './components/pages/NameInfo'
-import { analyzeName } from './controllers/NameInfo.controller'
 
 export default Vue.extend({
   name: 'App',
-
-  components: {
-    VpNameInfo,
-  },
-
-  methods: {
-    clicked() {
-      console.log('clicked dat button')
-    },
-
-    getInfoByName: analyzeName,
-  },
 })
 </script>
 
@@ -30,7 +21,8 @@ export default Vue.extend({
 .app {
   margin: 60px 0;
 }
-.app > :not(:first-child) {
+.stack > :not(:first-child) {
+  display: block;
   margin-block-start: 1rem;
 }
 </style>

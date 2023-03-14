@@ -1,2 +1,2 @@
-import VpNameInfo from './NameInfo.vue'
-export { VpNameInfo }
+import VpNameInfoPage from './NameInfo.route.vue'
+export { VpNameInfoPage }

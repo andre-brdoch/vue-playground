@@ -16,6 +16,7 @@
       <p><b>Likely age:</b> {{ info.age }}</p>
       <p><b>Likely nationality:</b> {{ info.countries.join(', ') }}</p>
       <p><b>Likely gender:</b> {{ info.gender }}</p>
+      <router-link :to="`/names/${name}`">Details</router-link>
     </article>
 
     <p v-if="error !== undefined" class="error" data-testid="error">
