@@ -1,19 +1,28 @@
 <template>
-  <article class="info stack">
-    <img :src="imgSrc" :alt="imgAlt" class="img" />
-    <h6 class="title">{{ name }}</h6>
-    <p><b>Typical age:</b> {{ age }}</p>
-    <p><b>Common in:</b> {{ emojis }}</p>
-  </article>
+  <figure class="info stack">
+    <div class="card stack">
+      <img :src="imgSrc" :alt="imgAlt" class="img" />
+      <h6 class="title">{{ name }}</h6>
+      <p><b>Typical age:</b> {{ age }}</p>
+      <p><b>Common in:</b> {{ emojis }}</p>
+    </div>
+
+    <figcaption class="disclaimer">
+      The data displayed is just a prediction, based on the name. Read more
+      about it <VpLink to="/about">here</VpLink>.
+    </figcaption>
+  </figure>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import type { PropType } from 'vue'
+import { VpLink } from '../Link'
 
 export default Vue.extend({
   name: 'VpInfo',
 
+  components: { VpLink },
   props: {
     name: { type: String, required: true },
     age: { type: Number, required: true },
@@ -55,12 +64,17 @@ function countryCodeToEmoji(countryCode: string): string {
 
 .info {
   display: inline-block;
+  width: 100%;
+  max-width: 18rem;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
   padding: 1rem;
   border: 2px solid var(--color-gray);
   border-radius: 4px;
   color: var(--color-text);
-  width: 100%;
-  max-width: 18rem;
 }
 
 .title {
@@ -74,5 +88,11 @@ function countryCodeToEmoji(countryCode: string): string {
   border: 2px solid var(--color-gray);
   padding: 2px;
   border-radius: 9999px;
+}
+
+.disclaimer {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--color-text);
 }
 </style>

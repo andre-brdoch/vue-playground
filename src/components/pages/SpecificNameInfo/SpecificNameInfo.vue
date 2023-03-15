@@ -1,7 +1,10 @@
 <template>
   <section>
     <VpContainer>
-      <VpInfo v-bind="info" />
+      <div class="stack">
+        <h1 class="title">Predicted profile for name "{{ info.name }}"</h1>
+        <VpInfo v-bind="info" />
+      </div>
     </VpContainer>
   </section>
 </template>
@@ -21,3 +24,15 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style scoped>
+.stack > *:not(:last-child) {
+  margin-block-end: 1rem;
+  display: block;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+</style>

@@ -15,6 +15,11 @@ const Template: Story = (args, { argTypes }) => ({
 
 export const Standard = Template.bind({})
 Standard.args = {
-  title: 'Hello world',
-  getAgeByName: () => 33,
+  title: "What's your name?",
+  getInfoByName: () => ({
+    name: 'Andre',
+    age: 28,
+    countries: ['DE', 'SE'],
+    gender: 'male',
+  }),
 }

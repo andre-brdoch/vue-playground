@@ -15,7 +15,7 @@ export default Vue.extend({
   },
 
   data() {
-    return { title: 'Tell me your name' }
+    return { title: "What's your name?" }
   },
 
   methods: {

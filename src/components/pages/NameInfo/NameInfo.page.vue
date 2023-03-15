@@ -1,29 +1,29 @@
 <template>
   <VpContainer>
-    <section class="stack">
-      <h1>{{ title }}</h1>
-
+    <div class="grid">
       <form class="stack" @submit.prevent>
         <div class="stack">
-          <label for="name">Enter a name</label>
+          <label for="name" class="title">{{ title }}</label>
           <input id="name" v-model="name" class="input" type="text" />
         </div>
 
-        <VpButton @click="onSubmit">Get age</VpButton>
+        <VpButton @click="onSubmit">Analyze name</VpButton>
       </form>
 
-      <VpLink
-        v-if="info !== undefined"
-        :to="`/names/${name}`"
-        data-testid="info"
-      >
-        <VpInfo v-bind="info" />
-      </VpLink>
+      <div>
+        <div v-if="info !== undefined" class="stack">
+          <h2 class="title">Predicted profile</h2>
 
-      <p v-if="error !== undefined" class="error" data-testid="error">
-        {{ error }}
-      </p>
-    </section>
+          <VpLink :to="`/names/${name}`" data-testid="info">
+            <VpInfo v-bind="info" />
+          </VpLink>
+        </div>
+
+        <p v-if="error !== undefined" class="error" data-testid="error">
+          {{ error }}
+        </p>
+      </div>
+    </div>
   </VpContainer>
 </template>
 
@@ -80,6 +80,16 @@ export default Vue.extend({
 .stack > *:not(:last-child) {
   margin-block-end: 1rem;
   display: block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .input {

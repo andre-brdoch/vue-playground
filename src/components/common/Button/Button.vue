@@ -3,8 +3,6 @@
     <slot>
       {{ message || 'Click me' }}
     </slot>
-
-    <slot name="icon"> icon </slot>
   </button>
 </template>
 
