@@ -1,9 +1,6 @@
 <template>
   <div id="app" class="app">
-    <nav>
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
-    </nav>
+    <VpNav :items="navItems" :github-url="githubUrl" />
 
     <main class="grow">
       <router-view />
@@ -15,20 +12,26 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { VpNav } from './components/common/Nav'
 import { VpFooter } from './components/common/Footer'
 
 export default Vue.extend({
   name: 'App',
 
-  components: { VpFooter },
+  components: { VpNav, VpFooter },
 
   data() {
     return {
+      navItems: [
+        { text: 'Home', href: '/' },
+        { text: 'About', href: '/about' },
+      ],
       footerItems: [
         { text: 'hi', href: '/' },
         { text: 'hi 2', href: '/' },
         { text: 'hi 3', href: '/' },
       ],
+      githubUrl: 'https://github.com/andre-brdoch/vue-playground',
     }
   },
 })
