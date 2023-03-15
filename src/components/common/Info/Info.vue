@@ -31,7 +31,8 @@ export default Vue.extend({
 .info {
   display: inline-block;
   padding: 1rem;
-  border: 2px solid #d1d1d1;
+  border: 2px solid var(--color-gray);
   border-radius: 4px;
+  color: var(--color-text);
 }
 </style>

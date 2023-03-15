@@ -25,7 +25,7 @@ export default Vue.extend({
 }
 
 .error {
-  color: #d61c1c;
+  color: var(--color-danger);
   font-weight: bold;
 }
 </style>

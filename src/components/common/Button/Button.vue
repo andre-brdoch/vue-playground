@@ -36,7 +36,7 @@ export default Vue.extend({
 .button {
   display: inline-block;
   padding: 1rem 2rem;
-  background: #3f701f;
+  background: var(--color-success);
   border: none;
   border-radius: 4px;
   color: white;
