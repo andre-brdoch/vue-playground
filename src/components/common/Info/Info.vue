@@ -4,7 +4,6 @@
     <p><b>Likely age:</b> {{ age }}</p>
     <p><b>Likely nationality:</b> {{ countries.join(', ') }}</p>
     <p><b>Likely gender:</b> {{ gender }}</p>
-    <router-link :to="`/names/${name}`">Details</router-link>
   </article>
 </template>
 

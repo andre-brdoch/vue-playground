@@ -11,9 +11,13 @@
       <VpButton @click="onSubmit">Get age</VpButton>
     </form>
 
-    <div v-if="info !== undefined" data-testid="info">
+    <router-link
+      v-if="info !== undefined"
+      :to="`/names/${name}`"
+      data-testid="info"
+    >
       <VpInfo v-bind="info" />
-    </div>
+    </router-link>
 
     <p v-if="error !== undefined" class="error" data-testid="error">
       {{ error }}

@@ -23,17 +23,13 @@ export default Vue.extend({
     }
   },
 
-  mounted() {
-    console.log(this.$route.params.name)
-
-    analyzeName(this.$route.params.name).then(result => {
-      if (result instanceof Error) {
-        // TODO
-        console.log('404!')
-        return
-      }
-      this.info = result
-    })
+  async mounted() {
+    const result = await analyzeName(this.$route.params.name)
+    if (result instanceof Error) {
+      this.$router.replace({ path: '/404' })
+      return
+    }
+    this.info = result
   },
 })
 </script>
