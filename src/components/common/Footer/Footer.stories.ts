@@ -10,13 +10,7 @@ export default meta
 const Template: Story = (args, { argTypes }) => ({
   components: { VpFooter },
   props: Object.keys(argTypes),
-  template: `<VpFooter v-bind="$props">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec purus enim.
-      Maecenas interdum ac elit at mattis. Aliquam convallis justo ut mi rutrum, ut euismod
-      mi vulputate. Morbi tempor et mi non rhoncus. Nam eu nunc egestas, egestas mi nec,
-      posuere magna. Proin non metus sed tellus auctor laoreet in ut eros. Vestibulum varius
-      mi nisi, vitae pulvinar tortor volutpat iaculis.
-    </VpFooter>`,
+  template: '<VpFooter v-bind="$props" />',
 })
 
 export const Standard = Template.bind({})

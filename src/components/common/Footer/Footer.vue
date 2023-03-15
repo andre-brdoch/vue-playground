@@ -1,19 +1,13 @@
 <template>
   <footer class="footer">
     <VpContainer>
-      <div class="grid">
-        <ul class="list">
-          <li v-for="item in items" :key="item.text">
-            <VpLink :to="item.href" class="link" :new-tab="item.newTab">
-              {{ item.text }}
-            </VpLink>
-          </li>
-        </ul>
-
-        <p class="text">
-          <slot></slot>
-        </p>
-      </div>
+      <ul class="list">
+        <li v-for="item in items" :key="item.text">
+          <VpLink :to="item.href" class="link" :new-tab="item.newTab">
+            {{ item.text }}
+          </VpLink>
+        </li>
+      </ul>
     </VpContainer>
   </footer>
 </template>
@@ -47,19 +41,9 @@ export default Vue.extend({
   padding: 2rem 0;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 2rem;
-}
-
-@media (max-width: 940px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .list {
+  display: flex;
+  gap: 2rem;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -71,13 +55,13 @@ export default Vue.extend({
   margin-bottom: 0.25rem;
 }
 
-.link,
-.text {
+.link {
   display: block;
   color: inherit;
   letter-spacing: 0.02em;
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  font-size: 0.75rem;
 }
 </style>

@@ -27,9 +27,16 @@ export default Vue.extend({
         { text: 'About', href: '/about' },
       ],
       footerItems: [
-        { text: 'hi', href: '/' },
-        { text: 'hi 2', href: '/' },
-        { text: 'hi 3', href: '/' },
+        {
+          text: 'Female icons created by Prosymbols Premium - Flaticon',
+          href: 'https://www.flaticon.com/free-icons/female',
+          newTab: true,
+        },
+        {
+          text: 'Male icons created by Freepik - Flaticon',
+          href: 'https://www.flaticon.com/free-icons/male',
+          newTab: true,
+        },
       ],
       githubUrl: 'https://github.com/andre-brdoch/vue-playground',
     }
