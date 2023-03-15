@@ -4,9 +4,9 @@
       <div class="grid">
         <ul class="list">
           <li v-for="item in items" :key="item.text">
-            <router-link :to="item.href" class="link">
+            <VpLink :to="item.href" class="link" :new-tab="item.newTab">
               {{ item.text }}
-            </router-link>
+            </VpLink>
           </li>
         </ul>
 
@@ -22,6 +22,7 @@
 import Vue from 'vue'
 import type { PropType } from 'vue'
 import { VpContainer } from '@/components/common/Container'
+import { VpLink } from '@/components/common/Link'
 
 interface FooterItem {
   text: string
@@ -32,7 +33,7 @@ interface FooterItem {
 export default Vue.extend({
   name: 'VpFooter',
 
-  components: { VpContainer },
+  components: { VpContainer, VpLink },
 
   props: {
     items: { type: Array as PropType<FooterItem[]>, required: true },

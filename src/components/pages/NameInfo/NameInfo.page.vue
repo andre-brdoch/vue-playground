@@ -12,13 +12,13 @@
         <VpButton @click="onSubmit">Get age</VpButton>
       </form>
 
-      <router-link
+      <VpLink
         v-if="info !== undefined"
         :to="`/names/${name}`"
         data-testid="info"
       >
         <VpInfo v-bind="info" />
-      </router-link>
+      </VpLink>
 
       <p v-if="error !== undefined" class="error" data-testid="error">
         {{ error }}
@@ -33,6 +33,7 @@ import { VpButton } from '@/components/common/Button'
 import { VpInfo } from '@/components/common/Info'
 import { VpContainer } from '@/components/common/Container'
 import { NameInfoModel } from '@/models/NameInfo.model'
+import { VpLink } from '@/components/common/Link'
 
 interface Data {
   name: string
@@ -43,7 +44,7 @@ interface Data {
 export default Vue.extend({
   name: 'VpNameInfo',
 
-  components: { VpContainer, VpButton, VpInfo },
+  components: { VpLink, VpContainer, VpButton, VpInfo },
 
   props: {
     title: { type: String, required: true },
