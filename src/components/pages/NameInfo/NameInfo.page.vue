@@ -1,34 +1,37 @@
 <template>
-  <section class="stack">
-    <h1>{{ title }}</h1>
+  <VpContainer>
+    <section class="stack">
+      <h1>{{ title }}</h1>
 
-    <form class="stack" @submit.prevent>
-      <div class="stack">
-        <label for="name">Enter a name</label>
-        <input id="name" v-model="name" class="input" type="text" />
-      </div>
+      <form class="stack" @submit.prevent>
+        <div class="stack">
+          <label for="name">Enter a name</label>
+          <input id="name" v-model="name" class="input" type="text" />
+        </div>
 
-      <VpButton @click="onSubmit">Get age</VpButton>
-    </form>
+        <VpButton @click="onSubmit">Get age</VpButton>
+      </form>
 
-    <router-link
-      v-if="info !== undefined"
-      :to="`/names/${name}`"
-      data-testid="info"
-    >
-      <VpInfo v-bind="info" />
-    </router-link>
+      <router-link
+        v-if="info !== undefined"
+        :to="`/names/${name}`"
+        data-testid="info"
+      >
+        <VpInfo v-bind="info" />
+      </router-link>
 
-    <p v-if="error !== undefined" class="error" data-testid="error">
-      {{ error }}
-    </p>
-  </section>
+      <p v-if="error !== undefined" class="error" data-testid="error">
+        {{ error }}
+      </p>
+    </section>
+  </VpContainer>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import { VpButton } from '@/components/common/Button'
 import { VpInfo } from '@/components/common/Info'
+import { VpContainer } from '@/components/common/Container'
 import { NameInfoModel } from '@/models/NameInfo.model'
 
 interface Data {
@@ -40,7 +43,7 @@ interface Data {
 export default Vue.extend({
   name: 'VpNameInfo',
 
-  components: { VpButton, VpInfo },
+  components: { VpContainer, VpButton, VpInfo },
 
   props: {
     title: { type: String, required: true },

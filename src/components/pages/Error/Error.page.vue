@@ -1,16 +1,20 @@
 <template>
   <section class="stack">
-    <h1 class="error">{{ title }}</h1>
-    <p v-if="description !== undefined">{{ description }}</p>
+    <VpContainer>
+      <h1 class="error">{{ title }}</h1>
+      <p v-if="description !== undefined">{{ description }}</p>
+    </VpContainer>
   </section>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import { VpContainer } from '@/components/common/Container'
 
 export default Vue.extend({
   name: 'VpErrorPage',
 
+  components: { VpContainer },
   props: {
     title: { type: String, required: true },
     description: { type: String || undefined, default: undefined },

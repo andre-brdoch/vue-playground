@@ -2,7 +2,7 @@
   <div id="app" class="app">
     <VpNav :items="navItems" :github-url="githubUrl" />
 
-    <main class="grow">
+    <main class="content">
       <router-view />
     </main>
 
@@ -44,7 +44,8 @@ export default Vue.extend({
   flex-direction: column;
 }
 
-.grow {
+.content {
   flex-grow: 1;
+  margin: 4rem 0;
 }
 </style>
