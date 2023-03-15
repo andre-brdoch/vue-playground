@@ -12,7 +12,7 @@ const Template: Story = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `<VpContainer v-bind="$props">
       <div style="background: black; padding: 2rem;"></div>
-    </VpFooter>`,
+    </VpContainer>`,
 })
 
 export const Standard = Template.bind({})
