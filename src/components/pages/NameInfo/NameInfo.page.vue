@@ -10,7 +10,7 @@
         <VpButton @click="onSubmit">Analyze name</VpButton>
       </form>
 
-      <div>
+      <div v-if="!isLoading">
         <div v-if="info !== undefined" class="stack">
           <h2 class="title">Predicted profile</h2>
 
@@ -23,6 +23,8 @@
           {{ error }}
         </p>
       </div>
+
+      <p v-if="isLoading">Loading...</p>
     </div>
   </VpContainer>
 </template>
@@ -39,6 +41,7 @@ interface Data {
   name: string
   info: NameInfoModel | undefined
   error: string | undefined
+  isLoading: boolean
 }
 
 export default Vue.extend({
@@ -56,11 +59,13 @@ export default Vue.extend({
       name: '',
       info: undefined,
       error: undefined,
+      isLoading: false,
     }
   },
 
   methods: {
     async onSubmit(): Promise<void> {
+      this.isLoading = true
       this.info = undefined
       this.error = undefined
 
@@ -71,6 +76,7 @@ export default Vue.extend({
       } else {
         this.info = result
       }
+      this.isLoading = false
     },
   },
 })
