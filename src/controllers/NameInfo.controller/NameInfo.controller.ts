@@ -4,7 +4,7 @@ import {
   Countries,
   Gender,
 } from '../../models/NameInfo.model'
-import { fetchAge, fetchGender, fetchCountries, isError } from './utils'
+import { fetchAge, fetchGender, fetchCountries, wait, isError } from './utils'
 
 export const analyzeName = (() => {
   const cache: { [name: string]: NameInfoModel } = {}
@@ -18,6 +18,8 @@ export const analyzeName = (() => {
       fetchAge(name),
       fetchCountries(name),
       fetchGender(name),
+      // artificially increase loading time
+      wait(1000),
     ])
 
     // if any result was an error:
@@ -26,7 +28,7 @@ export const analyzeName = (() => {
       return error
     }
 
-    const [age, countries, gender] = results as [Age, Countries, Gender]
+    const [age, countries, gender] = results as [Age, Countries, Gender, void]
     const result: NameInfoModel = {
       name,
       age,

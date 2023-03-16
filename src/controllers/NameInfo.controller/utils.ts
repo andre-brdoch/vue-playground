@@ -42,5 +42,11 @@ export const fetchGender = async (name: string): Promise<Gender | Error> => {
   return (result as GenderResult).gender
 }
 
+export const wait = async (milliseconds: number): Promise<void> => {
+  return new Promise(resolve => {
+    setTimeout(resolve, milliseconds)
+  })
+}
+
 export const isError = (thing: unknown): thing is Error =>
   thing instanceof Error
