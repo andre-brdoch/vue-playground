@@ -10,7 +10,7 @@
         <VpButton @click="onSubmit">Analyze name</VpButton>
       </form>
 
-      <div>
+      <div v-if="!isLoading">
         <div v-if="info !== undefined" class="stack">
           <h2 class="title">Predicted profile</h2>
 
@@ -23,6 +23,12 @@
           {{ error }}
         </p>
       </div>
+
+      <transition name="fade">
+        <div class="relative">
+          <VpLoadingSpinner v-if="isLoading" />
+        </div>
+      </transition>
     </div>
   </VpContainer>
 </template>
@@ -32,19 +38,21 @@ import Vue from 'vue'
 import { VpButton } from '@/components/common/Button'
 import { VpInfo } from '@/components/common/Info'
 import { VpContainer } from '@/components/common/Container'
-import { NameInfoModel } from '@/models/NameInfo.model'
 import { VpLink } from '@/components/common/Link'
+import { VpLoadingSpinner } from '@/components/common/LoadingSpinner'
+import { NameInfoModel } from '@/models/NameInfo.model'
 
 interface Data {
   name: string
   info: NameInfoModel | undefined
   error: string | undefined
+  isLoading: boolean
 }
 
 export default Vue.extend({
   name: 'VpNameInfo',
 
-  components: { VpLink, VpContainer, VpButton, VpInfo },
+  components: { VpLink, VpLoadingSpinner, VpContainer, VpButton, VpInfo },
 
   props: {
     title: { type: String, required: true },
@@ -56,11 +64,13 @@ export default Vue.extend({
       name: '',
       info: undefined,
       error: undefined,
+      isLoading: false,
     }
   },
 
   methods: {
     async onSubmit(): Promise<void> {
+      this.isLoading = true
       this.info = undefined
       this.error = undefined
 
@@ -71,6 +81,7 @@ export default Vue.extend({
       } else {
         this.info = result
       }
+      this.isLoading = false
     },
   },
 })
@@ -102,5 +113,23 @@ export default Vue.extend({
 .error {
   color: var(--color-danger);
   font-weight: bold;
+}
+
+.relative {
+  position: relative;
+}
+
+.loading {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
