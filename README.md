@@ -1,29 +1,9 @@
-# vue-playground
+Hej Andre! 😊
+Compileit är ett mindre bolag som är grundat av två utvecklare, sök efter Jonathan Ortheden och Isak Utegård på Linkedin om du är nyfiken på vilka de är.
 
-## Project setup
-```
-yarn install
-```
+Vi ställs dagligen inför nya problem som jag tror kan vara utmanande för någon med din bakgrund.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+Vad säger du om att ta ett digitalt möte med Isak (grundare & CTO) för att prata vidare?
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Passar på att önska dig en trevlig midsommar! 
+Allt gott, Victoria Norling på Compileit
